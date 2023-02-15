@@ -1,0 +1,24 @@
+.column__wrapper{
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.singleinfo{
+    padding: 20px 50px;
+    display: flex;
+    gap: 10px;
+}
+.pay__info{
+    padding: 15px ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.singlepay{
+    padding: 5px 50px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}

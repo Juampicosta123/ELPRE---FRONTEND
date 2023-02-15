@@ -1,0 +1,192 @@
+.header {
+  width: 100%;
+  height: 70px;
+  line-height: 70px;
+  background-color: var(--primary-color);
+  color: #fff !important
+}
+
+.nav__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.logo img {
+  width: 4rem;
+  height: 4rem;
+
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+ul.menu{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.nav__item a {
+  font-weight: 500;
+  cursor: pointer;
+  color: white;
+}
+
+.nav__icons {
+  display: flex;
+  align-items: center;
+  column-gap: 1.2rem;
+}
+
+.nav__icons span i {
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+
+.badge {
+  position: absolute;
+  top: 25%;
+  right: -8%;
+  width: 15px;
+  height: 15px;
+  content: "";
+  background-color: var(--primary-color);
+  color: #fff;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  z-index: 10;
+}
+
+.nav__icons .profile img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.nav__icons .profile {
+  position: relative;
+  z-index: 9;
+}
+
+.nav__icons .profile .profile__actions {
+  position: absolute;
+  top: 100%;
+  left: -50px;
+  width: 150px;
+  z-index: 10;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: var(--card-bg-01);
+  line-height: 30px;
+  display: none;
+  cursor: pointer;
+  border-radius: 5px;
+  color: var(--primary-color);
+}
+
+.show__profileActions {
+  display: block !important;
+}
+
+.mobile__menu {
+  font-size: 1.3rem;
+  display: none;
+}
+
+.nav__active {
+  font-weight: 700 !important;
+}
+
+.sticky__header {
+  width: 100%;
+  height: 70px;
+  line-height: 70px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  box-shadow: 3px 3px 8px -3px #ddd;
+  background: #fff;
+}
+ul.menu{
+  margin: 0 -80px !important;
+  padding: 0 !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.53);
+    z-index: 9999;
+    display: none;
+  }
+
+  .menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100%;
+    background: #fff;
+    color: var(--primary-color);
+    z-index: 99999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .active__menu {
+    display: block;
+  }
+
+  .mobile__menu {
+    display: block;
+  }
+
+  .mobile__menu span i {
+    font-size: 1.1rem !important;
+  }
+
+  .logo img {
+    width: 3rem;
+    height: 3rem;
+  }
+  .logo h1 {
+    font-style: 1rem;
+  }
+
+  .nav__icons span img {
+    width: 1.4rem;
+    height: 1.4rem;
+    margin-top: -8px !important;
+  }
+
+  .header {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+  }
+}
