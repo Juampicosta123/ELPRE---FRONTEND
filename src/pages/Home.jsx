@@ -6,7 +6,6 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import Pagination from "../components/Pagination/Pagination";
-import Loading from "../components/Loading/Loading";
 
 const baseUrl = "https://elpre-backend.onrender.com/api/student";
 
@@ -82,7 +81,7 @@ const Home = () => {
           {loading ? (
             <tbody className="text-center mt-3">
               <tr>
-                <td><Loading /></td>
+                <td>Cargando...</td>
               </tr>
             </tbody>
           ) : students.length === 0 ? (

@@ -12,7 +12,7 @@ const Layout = () => {
   }
   return (
     <>
-      {/* <Notificationpay isLogged={isLogged} /> */}
+       <Notificationpay isLogged={isLogged} /> 
       <Header isLogged={isLogged} />
       <Routers isLogged={isLogged} setLogin={setLogin} />
       <Footer />
