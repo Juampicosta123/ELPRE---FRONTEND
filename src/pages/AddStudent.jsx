@@ -4,7 +4,6 @@ import { Container, Row, Col, Form, FormGroup } from "reactstrap";
 import { toast } from "react-toastify";
 import "../styles/add-student.css";
 import axios from "axios";
-import { Link } from "react-router-dom";
 
 const baseUrl = "https://elpre-backend.onrender.com/api/student";
 
