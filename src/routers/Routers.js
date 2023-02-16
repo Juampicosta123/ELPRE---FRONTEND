@@ -11,7 +11,6 @@ import PayList from "../pages/PayList";
 import AddPay from "../pages/AddPay";
 import EditPay from "../pages/EditPay";
 import Nopay from "../pages/Nopay";
-import NotificationPay from "../components/NotificationPay/NotificationPay";
 
 const Routers = ({ isLogged, setLogin }) => {
   return (

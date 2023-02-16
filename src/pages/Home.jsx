@@ -9,7 +9,7 @@ import Pagination from "../components/Pagination/Pagination";
 
 const baseUrl = "https://elpre-backend.onrender.com/api/student";
 
-const Home = ({ isLogged }) => {
+const Home = () => {
   const [students, setStudents] = useState([]);
   const [loading, setLoading] = useState(false);
   const [remove, setRemove] = useState(false);
