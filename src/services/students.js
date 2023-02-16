@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseUrl = "https://elpre-backend.web.app/api/student";
+const baseUrl = "https://elpre-backend.onrender.com/api/student";
 
 let token = null;
 

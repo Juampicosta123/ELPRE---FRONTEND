@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import Pagination from "../components/Pagination/Pagination";
 
-const baseUrl = "https://elpre-backend.web.app/api/student";
+const baseUrl = "https://elpre-backend.onrender.com/api/student";
 
 const Home = ({ isLogged }) => {
   const [students, setStudents] = useState([]);

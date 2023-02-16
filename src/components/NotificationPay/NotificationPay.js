@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
 
-const baseUrl = "https://elpre-backend.web.app/api/notpay";
+const baseUrl = "https://elpre-backend.onrender.com/api/notpay";
 
 const NotificationPay = ({ isLogged }) => {
   const [students, setStudents] = useState([]);

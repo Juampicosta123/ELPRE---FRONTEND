@@ -5,8 +5,8 @@ import { toast } from "react-toastify";
 import "../styles/add-student.css";
 import axios from "axios";
 
-const baseUrl = "http://localhost:3001/api/pay";
-const getUrl = "http://localhost:3001/api/pay";
+const baseUrl = "https://elpre-backend.onrender.com/api/pay";
+const getUrl = "https://elpre-backend.onrender.com/api/pay";
 
 const AddPay = () => {
   const navigate = useNavigate();

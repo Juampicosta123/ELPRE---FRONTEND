@@ -4,7 +4,7 @@ import "../styles/student-details.css";
 import axios from "axios";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
-const baseUrl = "https://elpre-backend.web.app/api/student";
+const baseUrl = "https://elpre-backend.onrender.com/api/student";
 
 const StudentDetails = () => {
   const [student, setStudent] = useState([]);

@@ -6,7 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Pagination from "../components/Pagination/Pagination";
 
 
-const baseUrl = "https://elpre-backend.web.app/api/pay";
+const baseUrl = "https://elpre-backend.onrender.com/api/pay";
 
 const PayDetails = () => {
   const [pay, setPay] = useState(null);
