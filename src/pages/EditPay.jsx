@@ -7,7 +7,7 @@ import axios from "axios";
 
 
 const baseUrl = "https://elpre-backend.onrender.com/api/pay";
-const getUrl = "https://elpre-backend.onrender.com/getpay";
+const getUrl = "https://elpre-backend.onrender.com/api/getpay";
 
 const EditStudent = (payid) => {
   const navigate = useNavigate();
