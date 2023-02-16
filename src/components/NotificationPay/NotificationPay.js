@@ -6,7 +6,6 @@ const baseUrl = "http://localhost:3001/api/notpay";
 
 const NotificationPay = ({ isLogged }) => {
   const [students, setStudents] = useState([]);
-  const [loading, setLoading] = useState(false);
   let day = new Date().getDate();
 
   useEffect(() => {
@@ -22,8 +21,6 @@ const NotificationPay = ({ isLogged }) => {
           const { data } = response;
           setStudents(data);
         });
-
-        setLoading(false);
       }
     }
   });
