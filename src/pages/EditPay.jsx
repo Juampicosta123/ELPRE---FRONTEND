@@ -6,8 +6,8 @@ import "../styles/add-student.css";
 import axios from "axios";
 
 
-const baseUrl = "http://localhost:3001/api/pay";
-const getUrl = "http://localhost:3001/api/getpay";
+const baseUrl = "https://elpre-backend.web.app/api/pay";
+const getUrl = "https://elpre-backend.web.app/api/getpay";
 
 const EditStudent = (payid) => {
   const navigate = useNavigate();

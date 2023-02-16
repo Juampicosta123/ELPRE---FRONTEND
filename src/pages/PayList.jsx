@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "reactstrap";
 import "../styles/student-details.css";
 import axios from "axios";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Pagination from "../components/Pagination/Pagination";
 
-import EditPay from "../pages/EditPay";
 
-const baseUrl = "http://localhost:3001/api/pay";
+const baseUrl = "https://elpre-backend.web.app/api/pay";
 
 const PayDetails = () => {
   const [pay, setPay] = useState(null);

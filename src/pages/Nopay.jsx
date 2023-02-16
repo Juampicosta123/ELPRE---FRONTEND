@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import Pagination from "../components/Pagination/Pagination";
 
-const baseUrl = "http://localhost:3001/api/student";
+const baseUrl = "https://elpre-backend.web.app/api/student";
 
 const Nopay = () => {
   const [students, setStudents] = useState([]);
