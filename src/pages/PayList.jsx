@@ -4,6 +4,7 @@ import "../styles/student-details.css";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import Pagination from "../components/Pagination/Pagination";
+import Previous from "../components/Previous/Previous";
 
 
 const baseUrl = "https://elpre-backend.onrender.com/api/pay";
@@ -47,6 +48,7 @@ const PayDetails = () => {
 
   return (
     <>
+    <Previous navigate={`/student/${id}`}></Previous>
       <Container className="mt-5 text-center">
         <Row>
           {loading ? (

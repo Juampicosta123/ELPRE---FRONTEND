@@ -4,6 +4,7 @@ import { Container, Row, Col, Form, FormGroup } from "reactstrap";
 import { toast } from "react-toastify";
 import "../styles/add-student.css";
 import axios from "axios";
+import Previous from "../components/Previous/Previous";
 
 const baseUrl = "https://elpre-backend.onrender.com/api/student";
 
@@ -46,6 +47,7 @@ const AddStudent = () => {
 
   return (
     <section>
+      <Previous navigate="/home"></Previous>
       <Container>
         <Row>
           <Col lg="12">

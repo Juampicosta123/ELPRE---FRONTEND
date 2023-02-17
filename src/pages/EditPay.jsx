@@ -4,7 +4,7 @@ import { Container, Row, Col, Form, FormGroup } from "reactstrap";
 import { toast } from "react-toastify";
 import "../styles/add-student.css";
 import axios from "axios";
-
+import Previous from "../components/Previous/Previous";
 
 const baseUrl = "https://elpre-backend.onrender.com/api/pay";
 const getUrl = "https://elpre-backend.onrender.com/api/getpay";
@@ -67,6 +67,8 @@ const EditStudent = (payid) => {
 
   return (
     <section>
+      <Previous navigate={`/pays/${id}`}></Previous>
+
       <Container>
         <Row>
           <Col lg="12">

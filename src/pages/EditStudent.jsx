@@ -4,6 +4,7 @@ import { Container, Row, Col, Form, FormGroup } from "reactstrap";
 import { toast } from "react-toastify";
 import "../styles/add-student.css";
 import axios from "axios";
+import Previous from "../components/Previous/Previous";
 
 const baseUrl = "https://elpre-backend.onrender.com/api/student";
 
@@ -19,21 +20,20 @@ const EditStudent = () => {
   const { id } = useParams();
   const [original, setOriginal] = useState([]);
 
-
   useEffect(() => {
     setLoading(true);
-      const token = localStorage.getItem("Authorization");
-      const config = {
-        headers: {
-          Authorization: token,
-        },
-      };
+    const token = localStorage.getItem("Authorization");
+    const config = {
+      headers: {
+        Authorization: token,
+      },
+    };
 
-      axios.get(`${baseUrl}/${id}`, config).then((response) => {
-        const { data } = response.data;
-        setOriginal(data);
-        setLoading(false);
-      });
+    axios.get(`${baseUrl}/${id}`, config).then((response) => {
+      const { data } = response.data;
+      setOriginal(data);
+      setLoading(false);
+    });
   }, [1]);
 
   const editStudent = async (e) => {
@@ -42,11 +42,12 @@ const EditStudent = () => {
       setLoading(true);
       const token = localStorage.getItem("Authorization");
       const student = {
-        name : name !== "" ? name : original.name,
+        name: name !== "" ? name : original.name,
         email: email !== "" ? email : original.email,
         address: address !== "" ? address : original.address,
         mobile: mobile !== "" ? mobile : original.mobile,
-        secondary_mobile: secondarymobile !== "" ? secondarymobile : original.secondary_mobile,
+        secondary_mobile:
+          secondarymobile !== "" ? secondarymobile : original.secondary_mobile,
         dni: dni !== "" ? dni : original.dni,
       };
       const config = {
@@ -61,7 +62,6 @@ const EditStudent = () => {
         navigate(`/student/${id}`);
         setLoading(false);
       });
-      
     } catch (e) {
       setLoading(false);
       toast.error("Debes enviar un email válido");
@@ -70,6 +70,7 @@ const EditStudent = () => {
 
   return (
     <section>
+      <Previous navigate={`/student/${id}`}></Previous>
       <Container>
         <Row>
           <Col lg="12">

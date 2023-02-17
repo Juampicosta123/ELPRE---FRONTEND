@@ -3,6 +3,7 @@ import { Container, Row, Col } from "reactstrap";
 import "../styles/student-details.css";
 import axios from "axios";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import Previous from "../components/Previous/Previous";
 
 const baseUrl = "https://elpre-backend.onrender.com/api/student";
 
@@ -47,13 +48,13 @@ const StudentDetails = () => {
 
   return (
     <>
+      <Previous navigate="/home"></Previous>
       <Container className="mt-5 text-center">
         <Row>
           {loading ? (
             <h5>Cargando...</h5>
           ) : (
             <>
-              {" "}
               <Col lg="8" md="8" sm="12" className="information">
                 <h4 className="mb-5 fw-bold">Informacion del alumno</h4>
 
@@ -102,24 +103,22 @@ const StudentDetails = () => {
                   </button>
                 </div>
               </Col>
-              <Col lg="4"  md="4" sm="12"  className="pays">
+              <Col lg="4" md="4" sm="12" className="pays">
                 <h4 className="mb-3 fw-bold">Último Pago</h4>
                 {pay?.length === 0 ? (
                   <p className="mt-3">No hay pagos</p>
                 ) : (
-
-                    <div className="pay__info">
-                      <div className="singlepay">
-                        <h5>Año: </h5> <p>{ pay[pay?.length - 1]?.year }</p>
-                      </div>
-                      <div className="singlepay">
-                        <h5>Mes:</h5> <p>{ pay[pay?.length - 1]?.month }</p>
-                      </div>
-                      <div className="singlepay">
-                        <h5>Día:</h5> <p>{ pay[pay?.length - 1]?.day }</p>
-                      </div>
+                  <div className="pay__info">
+                    <div className="singlepay">
+                      <h5>Año: </h5> <p>{pay[pay?.length - 1]?.year}</p>
                     </div>
-
+                    <div className="singlepay">
+                      <h5>Mes:</h5> <p>{pay[pay?.length - 1]?.month}</p>
+                    </div>
+                    <div className="singlepay">
+                      <h5>Día:</h5> <p>{pay[pay?.length - 1]?.day}</p>
+                    </div>
+                  </div>
                 )}
 
                 <div className="d-flex align-items-center justify-content-center gap-3 my-3">

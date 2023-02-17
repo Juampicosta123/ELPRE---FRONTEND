@@ -1,8 +1,8 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 
 import { Link, NavLink } from "react-router-dom";
 import "./header.css";
-
+import { useNavigate } from "react-router-dom";
 import logo from "../../assets/images/logo.jpg";
 import userIcon from "../../assets/images/user-icon.png";
 
@@ -24,6 +24,8 @@ const nav__links = [
 ];
 
 const Header = ({ isLogged }) => {
+
+  const navigate = useNavigate()
   const headerRef = useRef(null);
 
   const profileActionRef = useRef(null);
@@ -32,7 +34,7 @@ const Header = ({ isLogged }) => {
 
   const handleLogout = async () => {
     loginService.logout();
-    window.location.reload();
+    navigate("/login")
   };
 
   const menuToggle = () => menuRef.current.classList.toggle("active__menu");
@@ -52,11 +54,11 @@ const Header = ({ isLogged }) => {
               </div>
             </div>
 
-            <div className="navigation" ref={menuRef} onClick={menuToggle}>
+            <div className="navigation text-dark" ref={menuRef} onClick={menuToggle}>
               <ul className="menu">
                 {
                   isLogged === "1" ? (nav__links.map((item, index) => (
-                    <li className="nav__item text-white" key={index}>
+                    <li className="nav__item " key={index}>
                       <NavLink
                         to={item.path}
                         className={(navClass) =>
@@ -66,7 +68,7 @@ const Header = ({ isLogged }) => {
                         {item.display}
                       </NavLink>
                     </li>
-                  ))) : (<li className="nav__item text-white">
+                  ))) : (<li className="nav__item ">
                   <NavLink
                     to="/login"
                     className={(navClass) =>

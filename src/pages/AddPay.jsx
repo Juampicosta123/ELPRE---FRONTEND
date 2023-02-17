@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Container, Row, Col, Form, FormGroup } from "reactstrap";
 import { toast } from "react-toastify";
 import "../styles/add-student.css";
 import axios from "axios";
+import Previous from "../components/Previous/Previous";
 
 const baseUrl = "https://elpre-backend.onrender.com/api/pay";
 
@@ -14,7 +15,6 @@ const AddPay = () => {
   const [day, setDay] = useState("");
   const [dni, setDni] = useState("");
   const [loading, setLoading] = useState(false);
-  
 
   const addPay = async (e) => {
     try {
@@ -43,6 +43,8 @@ const AddPay = () => {
 
   return (
     <section>
+      <Previous navigate="/home"></Previous>
+
       <Container>
         <Row>
           <Col lg="12">

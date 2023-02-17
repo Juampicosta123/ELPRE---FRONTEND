@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { toast } from "react-toastify";
 import axios from "axios";
 
 const baseUrl = "https://elpre-backend.onrender.com/api/notpay";

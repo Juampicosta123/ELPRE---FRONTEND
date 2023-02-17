@@ -1,6 +1,6 @@
 import axios from "axios";
-const baseUrl = "https://elpre-backend.onrender.com/api/login";
 
+const baseUrl = "https://elpre-backend.onrender.com/api/login";
 const setToken = async (token) => {
   localStorage.setItem("Authorization", `Bearer ${token}`);
 };
@@ -15,11 +15,11 @@ const login = async (credentials) => {
 };
 
 const isLogged = () => {
-  if(localStorage.getItem("Authorites")){
+  if (localStorage.getItem("Authorites")) {
     return true;
   } else {
-    return false
+    return false;
   }
-}
+};
 
 export default { login, setToken, logout, isLogged };

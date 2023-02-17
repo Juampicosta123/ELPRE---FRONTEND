@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "reactstrap";
 import "../styles/home.css";
+import Previous from "../components/Previous/Previous";
 
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -18,7 +19,7 @@ const Nopay = () => {
   const [studentsPerPage, setstudentsPerPage] = useState(10);
   let year = new Date().getFullYear();
   let month = new Date().getMonth() + 1;
-  let day = new Date().getDay()
+  let day = new Date().getDay();
 
   const handleDelete = async (id) => {
     setRemove(true);
@@ -60,6 +61,8 @@ const Nopay = () => {
 
   return (
     <Container>
+      <Previous navigate="/home"></Previous>
+
       <Row>
         <Col lg="12" className="mt-5 mb-5">
           <div className="d-flex justify-content-end">
@@ -121,94 +124,99 @@ const Nopay = () => {
                     </tr>
                   </thead>
                   <tbody className="text-white">
-                    {
-                     day >= "15" ? (
-                      currentStudents
-                      .filter((student) => student?.pay.length !== 0)
-                      .filter(
-                        (student) => student?.pay[student?.pay.length - 1]?.year === `${year}`
-                      ).filter(
-                        (student) => student?.pay[student?.pay.length - 1]?.month < `${month}`
-                      )
-                       .map((student) => (
-                         <tr key={student._id}>
-                           <td>{student.name}</td>
-                           <td>{student.dni}</td>
-                           <td>{student.email}</td>
-                           {student?.pay.length === 0 ? (
-                             <td>No hay pagos</td>
-                           ) : (
-                             <td>
-                               {student?.pay[student?.pay.length - 1].day}
-                               {"/"}
-                               {student?.pay[student?.pay.length - 1].month}
-                               {"/"}
-                               {student?.pay[student?.pay.length - 1].year}
-                             </td>
-                           )}
- 
-                           <td>
-                             <Link to={`/student/${student?._id}`}>
-                               Ver Información
-                             </Link>
-                           </td>
-                           <td>
-                             <button
-                               onClick={() => {
-                                 handleDelete(student._id);
-                               }}
-                               className="btn btn-danger"
-                             >
-                               <i className="ri-delete-bin-line"></i>
-                             </button>
-                           </td>
-                         </tr>
-                       ))
-                     ) : (
-                      currentStudents
-                      .filter((student) => student?.pay.length !== 0)
-                      .filter(
-                        (student) => student?.pay[student?.pay.length - 1].year === `${year}`
-                      )
-                      .filter(
-                        (student) => student?.pay[student?.pay.length - 1].month < `${month}`
-                      )
-                       .map((student) => (
-                         <tr key={student._id}>
-                           <td>{student.name}</td>
-                           <td>{student.dni}</td>
-                           <td>{student.email}</td>
-                           {student?.pay.length === 0 ? (
-                             <td>No hay pagos</td>
-                           ) : (
-                             <td>
-                               {student?.pay[student?.pay.length - 1].day}
-                               {"/"}
-                               {student?.pay[student?.pay.length - 1].month}
-                               {"/"}
-                               {student?.pay[student?.pay.length - 1].year}
-                             </td>
-                           )}
- 
-                           <td>
-                             <Link to={`/student/${student?._id}`}>
-                               Ver Información
-                             </Link>
-                           </td>
-                           <td>
-                             <button
-                               onClick={() => {
-                                 handleDelete(student._id);
-                               }}
-                               className="btn btn-danger"
-                             >
-                               <i className="ri-delete-bin-line"></i>
-                             </button>
-                           </td>
-                         </tr>
-                       ))
-                     )
-                   }
+                    {day >= "15"
+                      ? currentStudents
+                          .filter((student) => student?.pay.length !== 0)
+                          .filter(
+                            (student) =>
+                              student?.pay[student?.pay.length - 1]?.year ===
+                              `${year}`
+                          )
+                          .filter(
+                            (student) =>
+                              student?.pay[student?.pay.length - 1]?.month <
+                              `${month}`
+                          )
+                          .map((student) => (
+                            <tr key={student._id}>
+                              <td>{student.name}</td>
+                              <td>{student.dni}</td>
+                              <td>{student.email}</td>
+                              {student?.pay.length === 0 ? (
+                                <td>No hay pagos</td>
+                              ) : (
+                                <td>
+                                  {student?.pay[student?.pay.length - 1].day}
+                                  {"/"}
+                                  {student?.pay[student?.pay.length - 1].month}
+                                  {"/"}
+                                  {student?.pay[student?.pay.length - 1].year}
+                                </td>
+                              )}
+
+                              <td>
+                                <Link to={`/student/${student?._id}`}>
+                                  Ver Información
+                                </Link>
+                              </td>
+                              <td>
+                                <button
+                                  onClick={() => {
+                                    handleDelete(student._id);
+                                  }}
+                                  className="btn btn-danger"
+                                >
+                                  <i className="ri-delete-bin-line"></i>
+                                </button>
+                              </td>
+                            </tr>
+                          ))
+                      : currentStudents
+                          .filter((student) => student?.pay.length !== 0)
+                          .filter(
+                            (student) =>
+                              student?.pay[student?.pay.length - 1].year ===
+                              `${year}`
+                          )
+                          .filter(
+                            (student) =>
+                              student?.pay[student?.pay.length - 1].month <
+                              `${month}`
+                          )
+                          .map((student) => (
+                            <tr key={student._id}>
+                              <td>{student.name}</td>
+                              <td>{student.dni}</td>
+                              <td>{student.email}</td>
+                              {student?.pay.length === 0 ? (
+                                <td>No hay pagos</td>
+                              ) : (
+                                <td>
+                                  {student?.pay[student?.pay.length - 1].day}
+                                  {"/"}
+                                  {student?.pay[student?.pay.length - 1].month}
+                                  {"/"}
+                                  {student?.pay[student?.pay.length - 1].year}
+                                </td>
+                              )}
+
+                              <td>
+                                <Link to={`/student/${student?._id}`}>
+                                  Ver Información
+                                </Link>
+                              </td>
+                              <td>
+                                <button
+                                  onClick={() => {
+                                    handleDelete(student._id);
+                                  }}
+                                  className="btn btn-danger"
+                                >
+                                  <i className="ri-delete-bin-line"></i>
+                                </button>
+                              </td>
+                            </tr>
+                          ))}
                   </tbody>
                 </table>
               </div>
