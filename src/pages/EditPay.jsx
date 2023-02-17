@@ -34,7 +34,7 @@ const EditStudent = (payid) => {
         setOriginal(data?.pay[0]);
         setLoading(false);
       });
-  }, []);
+  }, [id, location.state.payid]);
 
   const editPay = async (e) => {
     try {
@@ -56,7 +56,7 @@ const EditStudent = (payid) => {
       await axios.put(`${baseUrl}/${id}`, pay, config).then((response) => {
         const { data } = response.data;
         setOriginal(data);
-        navigate(`/student/${id}`);
+        navigate(`/pays/${id}`);
         setLoading(false);
       });
     } catch (e) {
@@ -108,7 +108,7 @@ const EditStudent = (payid) => {
                     <div className="group">
                       <input
                         type="text"
-                        value={day}
+                        value={ day }
                         onChange={(e) => setDay(e.target.value)}
                         className="input"
                       />

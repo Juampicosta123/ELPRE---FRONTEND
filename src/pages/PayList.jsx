@@ -14,7 +14,7 @@ const PayDetails = () => {
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const [paysPerPage, setPaysPerPage] = useState(12);
+  const [paysPerPage] = useState(12);
 
   const { id } = useParams();
 
@@ -44,7 +44,7 @@ const PayDetails = () => {
       setLoading(false);
       setPay(data?.pay);
     });
-  }, []);
+  }, [id]);
 
   return (
     <>

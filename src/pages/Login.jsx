@@ -28,12 +28,6 @@ const Login = ({ setLogin }) => {
       });
 
       loginService.setToken(user.data.token);
-      const token = localStorage.getItem("Authorization");
-      const config = {
-        headers: {
-          Authorization: token,
-        },
-      };
       setLoading(false);
       toast.success("Succesfully logged in");
       setEmail("");

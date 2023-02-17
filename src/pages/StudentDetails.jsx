@@ -44,7 +44,7 @@ const StudentDetails = () => {
       setLoading(false);
       setPay(data?.pay);
     });
-  }, []);
+  }, [id]);
 
   return (
     <>

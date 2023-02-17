@@ -34,7 +34,7 @@ const EditStudent = () => {
       setOriginal(data);
       setLoading(false);
     });
-  }, [1]);
+  }, [id]);
 
   const editStudent = async (e) => {
     try {

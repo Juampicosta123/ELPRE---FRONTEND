@@ -16,7 +16,7 @@ const Nopay = () => {
   const [remove, setRemove] = useState(false);
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const [studentsPerPage, setstudentsPerPage] = useState(10);
+  const [studentsPerPage] = useState(10);
   let year = new Date().getFullYear();
   let month = new Date().getMonth() + 1;
   let day = new Date().getDay();
